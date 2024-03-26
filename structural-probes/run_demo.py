@@ -107,8 +107,8 @@ def report_on_stdin(args):
   """
 
   # Define the BERT model and tokenizer
-  tokenizer = BertTokenizer.from_pretrained('bert-large-cased')
-  model = BertModel.from_pretrained('bert-large-cased')
+  tokenizer = BertTokenizer.from_pretrained('bert-base-cased')
+  model = BertModel.from_pretrained('bert-base-cased')
   LAYER_COUNT = 24
   FEATURE_COUNT = 1024
   model.to(args['device'])
@@ -171,7 +171,7 @@ if __name__ == '__main__':
     torch.manual_seed(cli_args.seed)
     torch.backends.cudnn.deterministic = True
     torch.backends.cudnn.benchmark = False
-  yaml_args= yaml.load(open(cli_args.experiment_config))
+  yaml_args= yaml.load(open(cli_args.experiment_config), Loader=yaml.SafeLoader)
   run_experiment.setup_new_experiment_dir(cli_args, yaml_args, cli_args.results_dir)
   device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
   yaml_args['device'] = device

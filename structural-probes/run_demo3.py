@@ -88,7 +88,7 @@ def print_depth_image(args, words, prediction, sent_index):
     plt.text(cumdist*3, pred*2, word, fontsize=fontsize, color='red', ha='center')
     cumdist = cumdist + (np.square(len(word)) + 1)
 
-  plt.ylim(0,20)
+  plt.ylim(0,30)
   plt.xlim(0,cumdist*3.5)
   plt.title('Predicted Parse Depth (squared)', fontsize=10)
   plt.ylabel('Tree Depth', fontsize=10)
@@ -159,6 +159,13 @@ def report_on_stdin(args):
 
       predicted_edges = reporter.prims_matrix_to_edges(distance_predictions, untokenized_sent, untokenized_sent)
       print_tikz(args, predicted_edges, untokenized_sent)
+
+      print()
+      print("Distance Predictions: ")
+      print(distance_predictions)
+      print()
+      print("Depth Predictions: ")
+      print(depth_predictions)
 
 
 if __name__ == '__main__':

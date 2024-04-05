@@ -62,6 +62,14 @@ with h5py.File(args.output_path, 'w') as fout:
         encoded_layers = model(tokens_tensor, segments_tensors, output_norms = True)
         #print(len(encoded_layers[2][0][1]))
     dset = fout.create_dataset(str(index), (LAYER_COUNT, len(tokenized_text), FEATURE_COUNT))
-    dset[:,:] = np.vstack([np.array(x) for x in pad_to_feature_count(encoded_layers[2][0][1], FEATURE_COUNT)])
+    # encoded_layers[2][0] is a tuple of 7 elements (Kobayashi et al., 2021)
+    # 0: head-level Attn-N from Kobayashi et al., 2020
+    # 1: layer-level Attn-N from Kobayashi et al., 2020
+    # 2: AttnRes-N
+    # 3: AttnResLn-N
+    # 4: Mixing ratios for Attn-N
+    # 5: Mixing ratios for AttnRes-N
+    # 6: Mixing ratios for AttnResLn-N
+    dset[:,:] = np.vstack([np.array(x) for x in pad_to_feature_count(encoded_layers[2][0][2], FEATURE_COUNT)])
   
 

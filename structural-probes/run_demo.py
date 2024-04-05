@@ -109,8 +109,8 @@ def report_on_stdin(args):
   # Define the BERT model and tokenizer
   tokenizer = BertTokenizer.from_pretrained('bert-base-cased')
   model = BertModel.from_pretrained('bert-base-cased')
-  LAYER_COUNT = 24
-  FEATURE_COUNT = 1024
+  LAYER_COUNT = 12
+  FEATURE_COUNT = 768
   model.to(args['device'])
   model.eval()
 

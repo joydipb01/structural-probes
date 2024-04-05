@@ -86,7 +86,7 @@ def print_depth_image(args, words, prediction, sent_index):
     plt.text(cumdist*3, pred*2, word, fontsize=fontsize, color='red', ha='center')
     cumdist = cumdist + (np.square(len(word)) + 1)
 
-  plt.ylim(0,30)
+  plt.ylim(0,40)
   plt.xlim(0,cumdist*3.5)
   plt.title('Predicted Parse Depth (squared)', fontsize=10)
   plt.ylabel('Tree Depth', fontsize=10)

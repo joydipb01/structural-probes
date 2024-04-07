@@ -70,6 +70,6 @@ with h5py.File(args.output_path, 'w') as fout:
     # 4: Mixing ratios for Attn-N
     # 5: Mixing ratios for AttnRes-N
     # 6: Mixing ratios for AttnResLn-N
-    dset[:,:] = np.vstack([np.array(x) for x in pad_to_feature_count(encoded_layers[2][0][2], FEATURE_COUNT)])
+    dset[:,:] = np.vstack([np.array(x) for x in pad_to_feature_count(encoded_layers[2][0][3], FEATURE_COUNT)])
   
 

@@ -7,8 +7,8 @@ probe:
   task_name: demo
   maximum_rank: 32
   psd_parameters: True
-  depth_params_path: example/data/norm-res-n-bertbase-depth-probe_layer6.params
-  distance_params_path: example/data/norm-res-n-bertbase-distance-probe_layer6.params
+  depth_params_path: example/data/norm-ln-n-bertbase-depth-probe_layer6.params
+  distance_params_path: example/data/norm-ln-n-bertbase-distance-probe_layer6.params
 reporting:
   root: example/results
 

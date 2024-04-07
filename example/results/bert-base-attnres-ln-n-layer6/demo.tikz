@@ -1,0 +1,15 @@
+
+
+\begin{dependency}[hide label, edge unit distance=.5ex]
+  \begin{deptext}[column sep=0.05cm]
+  The\& mother\& scolded\& the\& daughter\& because\& she\& was\& drunk \\
+\end{deptext}
+\depedge[edge style={red!60!}, edge below]{1}{4}{.}
+\depedge[edge style={red!60!}, edge below]{7}{8}{.}
+\depedge[edge style={red!60!}, edge below]{2}{3}{.}
+\depedge[edge style={red!60!}, edge below]{6}{7}{.}
+\depedge[edge style={red!60!}, edge below]{2}{7}{.}
+\depedge[edge style={red!60!}, edge below]{5}{7}{.}
+\depedge[edge style={red!60!}, edge below]{1}{8}{.}
+\depedge[edge style={red!60!}, edge below]{3}{9}{.}
+\end{dependency}

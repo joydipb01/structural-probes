@@ -19,9 +19,9 @@ dataset:
   embeddings:
     type: token #{token,subword}
     root: example/data/en_ewt-ud-sample/ 
-    train_path: en_ewt-ud-train.norm_bert.hdf5
-    dev_path: en_ewt-ud-dev.norm_bert.hdf5
-    test_path: en_ewt-ud-test.norm_bert.hdf5
+    train_path: en_ewt-ud-train.decompx_bert.hdf5
+    dev_path: en_ewt-ud-dev.decompx_bert.hdf5
+    test_path: en_ewt-ud-test.decompx_bert.hdf5
   batch_size: 40
 
 model:
@@ -32,7 +32,7 @@ model:
     type: word
     vocab_path: example/vocab.vocab
   use_disk: True
-  model_layer: 6 # BERT-base: {1,...,12}; ELMo: {1,2,3}
+  model_layer: 2 # BERT-base: {1,...,12}; ELMo: {1,2,3}
 
 probe:
   task_signature: word # word, word_pair
@@ -40,7 +40,7 @@ probe:
   maximum_rank: 32
   psd_parameters: True
   diagonal: False
-  params_path: norm-bertbase-depth-probe_layer6.params
+  params_path: decompx-bertbase-depth-probe.params
 probe_training:
   epochs: 30
   loss: L1

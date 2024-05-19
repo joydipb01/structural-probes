@@ -1,0 +1,14 @@
+model:
+  hidden_dim: 768 # hidden dim
+  model_type: BERT-disk # BERT-disk, ELMo-disk, 
+  use_disk: False
+  model_layer: 8 # BERT-base: {1,...,12}; ELMo: {1,2,3}
+probe:
+  task_name: demo
+  maximum_rank: 32
+  psd_parameters: True
+  depth_params_path: example/bert-base-depth-params/norm-attnresln-bertbase-depth-probe_layer9.params
+  distance_params_path: example/bert-base-distance-params/norm-attnresln-bertbase-distance-probe_layer9.params
+reporting:
+  root: example/results/attnresln
+

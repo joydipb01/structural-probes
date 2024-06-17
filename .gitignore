@@ -129,3 +129,5 @@ dmypy.json
 .pyre/
 
 example/data/en_ewt-ud-sample/
+
+example/data/penn_treebank/
